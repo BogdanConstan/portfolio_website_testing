@@ -65,7 +65,7 @@ class App extends React.Component {
 
           {/*<Route exact path='/about' component={this.renderAboutContainer} />*/}
           <Route path='/projects' element={<ProjectsContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
-          <Route path='/resume' element={<ResumeContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
+          <Route path='/resume/' element={<ResumeContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
           <Route path='/contact' element={<ContactContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
           <Route component={NotFound}/>
         </Routes>

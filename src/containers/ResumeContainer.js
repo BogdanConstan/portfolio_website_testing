@@ -13,13 +13,11 @@ function ResumeContainer(props) {
   };
 
   useEffect(() => {
-    if (props.forceUpdate) {
-      setCurrentlyShowing('None');
-      props.handleForceUpdateFalse();
-      setResumeKey((prevKey) => prevKey + 1);
+    if (!props.forceUpdate) {
       navigate('/resume');
     }
-  }, [props.forceUpdate, props.handleForceUpdateFalse, navigate]);
+  }, [props.forceUpdate, navigate]);
+  
 
   useEffect(() => {
     if (props.forceUpdate) {
