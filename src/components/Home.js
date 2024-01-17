@@ -6,7 +6,7 @@ function Home() {
   return (
 
     <div id="home-div">
-      <p className="p one-second-animation" id="hi-there" >Hi there! I'm</p>
+      <p className="p one-second-animation" id="hi-there" >Hello! I'm</p>
       <h2 className="h2 three-second-animation" >Bogdan Constantinescu</h2>
       <h2 className="h2 five-second-animation" >I'm a Software Engineer</h2>
       <Link to='/resume' exact className="p seven-second-animation" id="intro" >

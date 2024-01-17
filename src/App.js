@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes, NavLink} from 'react-router-dom'
+import {Route, Routes, Router, NavLink} from 'react-router-dom'
 import './App.css';
 import AboutContainer from './containers/AboutContainer'
 import HomeContainer from './containers/HomeContainer'
@@ -37,14 +37,14 @@ class App extends React.Component {
       <div id="homepage">
   
         <div id="navbar">   
-          <NavLink to='/' exact className="navbar-links" >
+          <NavLink to='/' exact="true" className="navbar-links" >
               <img src={require("./media/bc.svg").default} alt='' id="logo" />
           </NavLink>     
-          <NavLink to='/contact' exact className="navbar-links" >05. Contact</NavLink>
-          <NavLink to='/about' exact className="navbar-links" onClick={this.handleForceUpdateTrue} >04. About</NavLink>
-          <NavLink to='/resume' exact className="navbar-links" onClick={this.handleForceUpdateTrue} >03. Résumé</NavLink>
-          <NavLink to='/projects' exact className="navbar-links" onClick={this.handleForceUpdateTrue} >02. Projects</NavLink>
-          <NavLink to='/' exact className="navbar-links" >01. Home</NavLink>
+          <NavLink to='/contact' exact="true" className="navbar-links" >05. Contact</NavLink>
+          <NavLink to='/about' exact="true" className="navbar-links" onClick={this.handleForceUpdateTrue} >04. About</NavLink>
+          <NavLink to='/resume' exact="true" className="navbar-links" onClick={this.handleForceUpdateTrue} >03. Résumé</NavLink>
+          <NavLink to='/projects' exact="true" className="navbar-links" onClick={this.handleForceUpdateTrue} >02. Projects</NavLink>
+          <NavLink to='/' exact="true" className="navbar-links" >01. Home</NavLink>
         </div >
   
         <div id="social-links-div">
@@ -58,18 +58,16 @@ class App extends React.Component {
             <img src={require("./media/contact-icon.svg").default} alt='' className="icons" />
           </a>
         </div>     
-  
+        
         <Routes>
           <Route path='/' element={<HomeContainer />} />
-          <Route path='/about' element={<AboutContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
-
-          {/*<Route exact path='/about' component={this.renderAboutContainer} />*/}
-          <Route path='/projects' element={<ProjectsContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
-          <Route path='/resume/' element={<ResumeContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
-          <Route path='/contact' element={<ContactContainer handleForceUpdateFalse={this.handleForceUpdateFalse} />} />
-          <Route component={NotFound}/>
+          <Route path='/about' element={<this.renderAboutContainer/>} />
+          <Route path='/projects' element={<this.renderProjectsContainer/>} />
+          <Route path='/resume' element={<this.renderResumeContainer/>} />
+          <Route path='/contact' element={<ContactContainer/>} />
+          <Route element={<NotFound/>}/>
         </Routes>
-  
+        
       </div>
     
     );
