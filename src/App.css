@@ -179,6 +179,7 @@ body,
   border: none;
   text-align: left;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .about-buttons {
@@ -719,7 +720,7 @@ body,
 }
 
 .arrow {
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
@@ -731,11 +732,11 @@ body,
 }
 
 .left {
-  left: 0;
+  position: left;
 }
 
 .right {
-  right: 0;
+  position: right;
 }
 
 .modal {
